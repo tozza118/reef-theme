@@ -19,7 +19,7 @@ import TopicMarquee from "@components/Sections/Home/TopicMarquee.astro";
 import TopicStrip from "@components/Sections/Home/TopicStrip.astro";
 import WritersStrip from "@components/Sections/Home/WritersStrip.astro";
 import siteData from "@config/siteData.json";
-import { getLocale, localePaths, locales, localizePath, useTranslations } from "@i18n";
+import { getLocale, localePaths, localizePath, useTranslations } from "@i18n";
 import { getLocalizedCollection } from "@i18n/content";
 import { getResolvedPosts, getSortedTopics } from "@js/posts";
 import { organization, website } from "@js/schema";
@@ -54,9 +54,9 @@ for (const entry of posts) {
 }
 
 // Le compte de ce qu'il y a a lire, dans l'ordre des libelles de heroLedger :
-// notes publiees, fils, langues servies. Compte ici comme le reste, pour que
+// notes publiees, fils, auteurs. Compte ici comme le reste, pour que
 // le hero n'ait aucune collection a relire.
-const ledger = [posts.length, topics.length, locales.length] as const;
+const ledger = [posts.length, topics.length, authors.length] as const;
 
 const title = t.home.metaTitle;
 const description = t.home.metaDescription;

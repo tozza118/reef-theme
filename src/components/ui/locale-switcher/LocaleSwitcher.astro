@@ -113,10 +113,11 @@ const thumb = "bg-background border-border shadow-float border";
 // verre sombre du hero, le libelle actif serait blanc sur une pastille blanche.
 const on = "text-foreground";
 const off = bar ? "text-current/60 hover:text-current/90" : "text-muted-foreground hover:text-foreground";
+const showSwitcher = locales.length > 1;
 ---
 
 {
-  compact ? (
+  showSwitcher && (compact ? (
     // --- Deux langues : un interrupteur -------------------------------------
     // Le libelle complet reste dans aria-label ; l'oeil lit "EN FR", le lecteur
     // d'ecran entend "English" et "Francais". Les deux publics sont servis.
@@ -195,7 +196,7 @@ const off = bar ? "text-current/60 hover:text-current/90" : "text-muted-foregrou
         ))}
       </DropdownMenu>
     </Dropdown>
-  )
+  ))
 }
 
 <style>

@@ -16,7 +16,7 @@
 // et se generent pour chaque langue de cette liste.
 
 /** Les langues servies par le site. La premiere est la langue par defaut. */
-export const locales = ["en", "fr"] as const;
+export const locales = ["en"] as const;
 
 export type Locale = (typeof locales)[number];
 
@@ -42,7 +42,6 @@ export interface LocaleMeta {
 
 export const localeMeta: Record<Locale, LocaleMeta> = {
   en: { label: "English", htmlLang: "en", dir: "ltr", intl: "en-US", short: "EN" },
-  fr: { label: "Français", htmlLang: "fr", dir: "ltr", intl: "fr-FR", short: "FR" },
 };
 
 /** Vrai si la chaine est bien une langue du site. Utilise pour valider ce qui

@@ -28,8 +28,9 @@
 // qu'on ne sait plus justifier est une exception a retirer.
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
+const ROOT = fileURLToPath(new URL("..", import.meta.url)).replace(/\/$/, "");
 const SKIP = new Set(["node_modules", "dist", ".git", ".astro", "public", ".vercel", ".wrangler"]);
 const LINTABLE = /\.(astro|ts|tsx|mjs|js|css|md|json)$/;
 

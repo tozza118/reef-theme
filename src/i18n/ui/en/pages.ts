@@ -24,8 +24,8 @@ export const enPages = {
     heroSecondary: "About the studio",
     heroRecent: "Latest notes",
     // Les trois libelles du compteur du hero, dans l'ordre exact ou la page
-    // fournit les nombres : notes publiees, sujets, langues servies.
-    heroLedger: ["notes published", "threads", "languages"],
+    // fournit les nombres : notes publiees, sujets, auteurs.
+    heroLedger: ["notes published", "threads", "writers"],
     featuredEyebrow: "Pick of the month",
     latestTitle: "Latest notes",
     latestAccent: "Latest",

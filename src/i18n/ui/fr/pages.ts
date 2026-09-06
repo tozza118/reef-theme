@@ -24,7 +24,7 @@ export const frPages: Pick<
     heroPrimary: "Commencer à lire",
     heroSecondary: "À propos du studio",
     heroRecent: "Dernières notes",
-    heroLedger: ["notes publiées", "fils", "langues"],
+    heroLedger: ["notes publiées", "fils", "auteurs"],
     featuredEyebrow: "La note du mois",
     latestTitle: "Dernières notes",
     latestAccent: "Dernières",
