@@ -1,0 +1,9 @@
+{
+  "name": "Dr Torrance Merkle",
+  "role": "General Practitioner",
+  "bio": "Dr Torrance Merkle graduated from the University of Auckland in 2012 and has been practicing medicine for over a decade. ",
+  "links": [
+    { "label": "Website", "href": "https://www.drtorrance.nz" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/torrance-merkle" }
+  ]
+}

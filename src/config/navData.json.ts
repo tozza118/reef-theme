@@ -13,7 +13,7 @@ export function getNavData(locale: Locale): NavItem[] {
   const t = useTranslations(locale);
   const L = (path: string): string => localizePath(path, locale);
   return [
-    { text: t.nav.posts, href: L("/blog/") },
+    { text: t.nav.posts, href: L("/about-me/") },
     { text: t.nav.topics, href: L("/topics/") },
     { text: t.nav.about, href: L("/about/") },
     { text: t.nav.contact, href: L("/contact/") },

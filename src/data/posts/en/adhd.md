@@ -1,14 +1,14 @@
 ---
-title: "A performance budget that survives contact with a client"
-description: "A budget is not a Lighthouse score and it is not a Slack message. Here is the one we now write into the contract: four numbers, the device they are measured on, and the sentence that decides what happens when someone asks for a video header in week nine."
-pubDate: 2025-10-21
-updatedDate: 2026-02-10
-author: en/noor-benali
-topic: en/performance
-tags: ["performance", "budgets", "process"]
+title: "ADHD "
+description: "A description of ADHD"
+pubDate: 2026-09-08
+updatedDate: 2026-09-08
+author: en/torrance-merkle
+topic: en/adhd
+tags: ["adhd", "health"]
 cover: ../../../assets/covers/reef-budget-performance.webp
 coverAlt: "A turquoise wave drawing itself up, its translucent crest backlit under a veil of white spray"
-featured: false
+featured: true
 draft: false
 ---
 
