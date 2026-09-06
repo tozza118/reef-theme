@@ -1,15 +1,9 @@
-// src/config/legalData.json.ts - contenu des pages privacy et terms, une version par langue : copie generique, prete a personnaliser.
+// src/config/legalData.json.ts - content for privacy and terms pages: customizable legal copy.
 
 import type { Locale } from "@i18n";
 import type { LegalDocument } from "./types/configDataTypes";
 
-// Deux documents rendus par le meme template de page. La copie est volontairement
-// generique ("nous", "le service") : l'utilisateur l'adapte et la fait valider par
-// son conseil. Aucun passage entre crochets ici : les champs a completer vivent
-// dans les mentions legales, sous src/i18n/ui/en/pages.ts et son equivalent
-// francais. Ceci n'est pas un avis juridique, et la version francaise n'en est
-// pas davantage une : les deux textes disent la meme chose, aucun ne fait foi
-// sur l'autre.
+// Two documents rendered by the same page template. Generic starter text ready for personalization.
 
 type LegalPages = { privacy: LegalDocument; terms: LegalDocument };
 
@@ -106,7 +100,7 @@ const en: LegalPages = {
 
 const byLocale: Record<Locale, LegalPages> = { en };
 
-/** Les deux documents legaux dans la langue demandee. */
+/** Legal documents for requested locale. */
 export function getLegalData(locale: Locale): { privacy: LegalDocument; terms: LegalDocument } {
   return byLocale[locale];
 }
