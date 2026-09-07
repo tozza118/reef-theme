@@ -5,9 +5,9 @@ pubDate: 2026-09-08
 author: en/torrance-merkle
 topic: en/adhd
 tags: ["adhd", "health", "screener", "test"]
-cover: ../../../assets/covers/reef-mesurer-lecteur.webp
-coverAlt: "ADHD Self-Report Scale assessment tool"
-featured: false
+cover: ../../../assets/covers/adhd-wooden-blocks.webp
+coverAlt: "Wooden blocks spelling ADHD arranged on a wooden table, with someone arranging them"
+featured: true
 draft: false
 ---
 
