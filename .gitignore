@@ -21,9 +21,9 @@ dist/
 # au build, un clone doit donc les trouver deja la. Les regenerer apres un
 # rebrand, puis les commiter.
 
-# Photographies de la demo : rapatriees par `pnpm covers`, refabriquees au build.
-src/assets/covers/
-src/assets/*.webp
+# Demo stock photographs: fetched by `pnpm covers`, rebuilt at build time.
+src/assets/covers/reef-*
+src/assets/reef-*
 
 # Outillage local des autres assistants de code : jamais publie.
 # CLAUDE.md et .claude/settings.json, eux, font partie du produit : ils
