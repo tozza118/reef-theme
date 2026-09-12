@@ -1,3 +1,4 @@
+// astro.config.mjs - Astro site configuration for Dr Torrance Merkle.
 // @ts-check
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
@@ -6,36 +7,27 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  // Alimente canonical, OG, sitemap, robots.txt et llms.txt. Une seule edition les corrige tous.
-  site: "https://reef.alohapixel.app",
+  // Feeds canonical URL, Open Graph, sitemap, robots.txt and llms.txt.
+  site: "https://drtorrance.co.nz",
 
-  // Une seule forme d'URL canonique : le build en repertoires emet un slash final, et
-  // canonical + OG s'accordent sur cette forme.
+  // Trailing slash ensures canonical consistency across static directories.
   trailingSlash: "always",
 
-  // Pas d'adapter, volontairement : le theme compile en HTML 100% statique et
-  // n'impose aucun hebergeur a son utilisateur.
+  // Static HTML output without server adapter.
   security: { checkOrigin: true },
 
-  // Routage bilingue. L'anglais est servi a la racine (/, /about/), le francais
-  // sous /fr/. prefixDefaultLocale: false est ce qui evite un /en/ inutile dans
-  // les URLs. La liste vit dans src/i18n/config.ts, une seule source de verite.
+  // Locale configuration: English only served at the root.
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "fr"],
+    locales: ["en"],
     routing: { prefixDefaultLocale: false, redirectToDefaultLocale: false },
   },
 
   integrations: [
-    // Pas de React ici, volontairement : Reef n'a pas un seul ilot. Tout le
-    // theme est du .astro, et la page d'article part a zero kilo-octet de
-    // JavaScript. C'est le principal argument d'un theme de blog.
     mdx(),
     sitemap({
       filter: (page) => !["/404/", "/examples/"].some((p) => page.includes(p)),
-      // Le sitemap porte les memes alternatives que les balises hreflang du
-      // head : Google recoupe les deux, et un desaccord fait ignorer les deux.
-      i18n: { defaultLocale: "en", locales: { en: "en", fr: "fr" } },
+      i18n: { defaultLocale: "en", locales: { en: "en" } },
     }),
   ],
 

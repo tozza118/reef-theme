@@ -1,10 +1,4 @@
-// src/pages/llms.txt.ts - llms.txt dynamique : presente le blog aux agents, ses pages cles et ses derniers billets, dans toutes les langues.
-//
-// Il n'existe QU'UN llms.txt par domaine, d'ou sa place a la racine de
-// src/pages et non sous [...locale]. Il doit donc decrire le site dans toutes
-// ses langues, sinon un agent conclut que la moitie du site n'existe pas. Le
-// fichier lui-meme reste redige en anglais, langue de travail des agents, mais
-// il liste et nomme les URLs de chaque langue.
+// src/pages/llms.txt.ts - Dynamic llms.txt: presents the site, core pages, topics, and posts to AI agents.
 import siteData from "@config/siteData.json";
 import { localeMeta, localizePath, locales } from "@i18n";
 import { entrySlug } from "@i18n/content";
@@ -20,22 +14,22 @@ export const GET: APIRoute = async ({ site, url }) => {
     "",
     `> ${siteData.description}`,
     "",
-    `This site is published in ${locales.length} languages: ` +
+    `This site is published in ${locales.length} language: ` +
       locales
         .map((locale) => `${localeMeta[locale].label} (${absolute(localizePath("/", locale))})`)
         .join(", ") +
-      ". Every page listed below exists in each of them.",
+      ".",
     "",
   ];
 
   const core: [string, string][] = [
-    ["/", "the editorial home: featured post, latest notes, topics and writers"],
-    ["/blog/", "every published post, newest first, paginated nine to a page"],
-    ["/topics/", "the topic index; each topic has its own paginated archive"],
-    ["/authors/", "the people who write here, one page per byline"],
-    ["/about/", "how the studio works and why the notes are published"],
-    ["/contact/", "how to reach the studio"],
-    ["/legal/", "publisher, host and how to report a problem"],
+    ["/", "the home page: featured guide, latest articles, topics, and about summary"],
+    ["/blog/", "every published article and guide, newest first"],
+    ["/topics/", "the clinical topic index"],
+    ["/authors/", "author profile for Dr Torrance Merkle"],
+    ["/about-me/", "biography, medical credentials, and practice philosophy"],
+    ["/contact/", "contact information, clinic details, and emergency guidance"],
+    ["/legal/", "publisher, medical disclaimer, and terms"],
   ];
 
   for (const locale of locales) {

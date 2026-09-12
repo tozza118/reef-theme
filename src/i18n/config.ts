@@ -23,7 +23,7 @@ export interface LocaleMeta {
 }
 
 export const localeMeta: Record<Locale, LocaleMeta> = {
-  en: { label: "English", htmlLang: "en", dir: "ltr", intl: "en-US", short: "EN" },
+  en: { label: "English", htmlLang: "en", dir: "ltr", intl: "en-NZ", short: "EN" },
 };
 
 /** Returns true if the value matches a configured site locale. */

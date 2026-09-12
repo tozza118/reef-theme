@@ -1,4 +1,4 @@
-// src/pages/[...locale]/rss.xml.ts - flux RSS 2.0 ecrit a la main, un par langue : lit la collection posts, zero dependance.
+// src/pages/[...locale]/rss.xml.ts - RSS 2.0 feed generator: reads posts collection, zero dependencies.
 //
 // Un flux PAR LANGUE, et pas un flux melange : un lecteur francophone qui
 // s'abonne ne veut pas voir arriver la moitie des titres en anglais. L'anglais

@@ -1,61 +1,42 @@
-// src/i18n/ui/en/chrome.ts - dictionnaire anglais, tranche "chrome" : navigation, pied de page, libelles partages.
-//
-// Le dictionnaire est decoupe par domaine plutot que garde en un seul fichier :
-// une personne peut relire la copie des pages pendant qu'une autre revoit les
-// libelles de la barre, sans se marcher dessus. index.ts recompose le tout.
-//
-// Cette tranche ne contient QUE ce qui entoure le contenu et se repete sur
-// toutes les pages. Une phrase propre a une seule page appartient a la tranche
-// "pages" ; tout ce qui habille la lecture d'un article appartient a "reading".
+// src/i18n/ui/en/chrome.ts - English dictionary, chrome slice: navigation, footer, shared labels.
 
 export const enChrome = {
-  // --- Barre de navigation -------------------------------------------------
-  // Quatre rubriques, pas de mega-menu : un blog qui ouvre un panneau au survol
-  // demande au lecteur de choisir avant de lui avoir donne une raison de choisir.
+  // Navigation bar
   nav: {
-    posts: "Posts",
+    posts: "Articles",
     topics: "Topics",
-    about: "About",
+    about: "About Me",
     contact: "Contact",
     authors: "Authors",
     search: "Search",
-    /** Libelle accessible du lien qui ramene le titre du blog a l'accueil. */
-    brandHome: "Reef Notes, back to the home page",
-    /** Les deux <nav> de la page portent un nom : sans lui, un lecteur d'ecran
-     *  annonce "navigation" deux fois et ne dit pas laquelle des deux. */
+    brandHome: "Dr Torrance Merkle, back to the home page",
     mainLabel: "Main",
     mobileLabel: "Mobile",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     switchLanguage: "Change language",
     toggleTheme: "Toggle theme",
-    subscribe: "Subscribe",
+    subscribe: "Newsletter",
   },
 
-  // --- Pied de page --------------------------------------------------------
-  // Trois colonnes seulement : Lire, Le studio, Legal. Un pied de page de blog
-  // qui aligne six colonnes copie un SaaS et sert d'egout a liens morts.
+  // Footer
   footer: {
     tagline:
-      "Reef Notes is the working notebook of a three-person web studio. Build logs, load times, type specimens, and the parts of freelancing nobody puts on a landing page.",
+      "Dr Torrance Merkle is an Auckland-trained General Practitioner with a special interest in adult ADHD screening, diagnosis navigation, and holistic healthcare.",
     colRead: "Read",
-    colStudio: "The studio",
+    colStudio: "Practice",
     colLegal: "Legal",
     rss: "RSS feed",
     sitemap: "Sitemap",
     imprint: "Legal notice",
     privacy: "Privacy",
-    /** src/config/legalData.json.ts porte encore ce document : il garde donc un
-     *  libelle et une route, meme si le pied de page n'affiche que les deux
-     *  precedents. */
     terms: "Terms",
     rights: "All rights reserved.",
-    builtWith: "Built with Astro, set in Space Grotesk and Instrument Sans.",
-    themeBy: "Reef theme by",
+    builtWith: "Dr Torrance Merkle. General Practitioner (MBChB, Auckland).",
+    themeBy: "Site theme based on Reef by",
     backToTop: "Back to top",
-    /** Libelles accessibles des liens qui ne portent qu'une icone. */
     subscribeRss: "Subscribe to the RSS feed",
-    emailStudio: "Email the studio",
+    emailStudio: "Email Dr Torrance Merkle",
     followOn: "Follow {name} on {network}",
   },
 

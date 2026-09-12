@@ -1,105 +1,71 @@
 ---
-title: "ADHD "
-description: "A description of ADHD"
+title: "Understanding Adult ADHD: Symptoms, Strengths, and Diagnosis in New Zealand"
+description: "A General Practitioner's guide to recognizing adult ADHD, navigating the diagnosis process in New Zealand, and finding effective support."
 pubDate: 2026-09-08
-updatedDate: 2026-09-08
+updatedDate: 2026-09-12
 author: en/torrance-merkle
 topic: en/adhd
-tags: ["adhd", "health"]
-cover: ../../../assets/covers/reef-budget-performance.webp
-coverAlt: "A turquoise wave drawing itself up, its translucent crest backlit under a veil of white spray"
-featured: true
+tags: ["adhd", "health", "diagnosis", "new-zealand"]
+cover: ../../../assets/covers/adhd-wooden-blocks.webp
+coverAlt: "Wooden blocks spelling ADHD on a wooden desk"
+featured: false
 draft: false
 ---
 
-Every studio says it cares about performance. Almost none of them can tell you, before the project starts, what number would make them refuse a feature. That gap is the whole problem: without a threshold agreed in advance, "fast" is a taste, and taste loses every argument against a marketing department.
+Attention Deficit Hyperactivity Disorder (ADHD) is often misunderstood as a childhood condition characterized solely by physical restlessness. In reality, ADHD is a lifelong neurodevelopmental difference that affects executive functioning, attention regulation, and emotional processing.
 
-We started writing performance budgets into the statement of work in 2023. They have failed twice, which taught us more than the times they worked.
+In General Practice, one of the most common statements I hear from newly presenting adults is: "I thought I was just lazy, disorganized, or bad at managing life." For many, receiving an accurate ADHD assessment provides profound relief, reframing decades of unexplained struggle into an understandable neurobiological framework.
 
-## The four numbers
+## What ADHD Actually Looks Like in Adulthood
 
-A budget with nine metrics is a wish list. Ours has four, and each one exists because it protects a different person.
+ADHD is not an inability to focus. It is a difficulty with **regulating** focus. The ADHD brain has lower baseline availability of key neurotransmitters (principally dopamine and noradrenaline) in circuits responsible for executive control.
 
-| Metric | Target | Protects |
-| --- | --- | --- |
-| Largest Contentful Paint | 2.0 s at p75[^p75] | The reader deciding whether to stay |
-| Interaction to Next Paint | 200 ms at p75 | Anyone who taps a menu on a cheap phone |
-| Cumulative Layout Shift | 0.05 | The reader who just lost their place |
-| Page weight, article template | 180 KB compressed | The client, from us |
+When an activity provides high novelty, urgency, or intrinsic interest, an adult with ADHD can enter a state of intense hyperfocus. Conversely, when a task is repetitive, routine, or administratively tedious, initiating and maintaining focus feels like swimming against a strong current.
 
-The last row is the one clients ask about, and it is the one we care about most. The three Core Web Vitals are outcomes: they move for reasons you do not fully control, including the CDN, the visitor's network and the phone in their pocket. Page weight is an input. It is the number the team actually sets, every day, with every decision, and it is the only one you can check without deploying anything.
+Common presentations in adults include:
 
-[^p75]: p75 means the 75th percentile of real visits: three out of four readers get that experience or better. Chrome's field data aggregates it over a rolling 28 day window, which is also why a fix you shipped last Tuesday does not show up in the report yet.
+- **Executive dysfunction**: Difficulty breaking large projects into sequential steps, estimating time accurately, or knowing where to start.
+- **Working memory lapses**: Forgetting appointments, misplacing keys and phones, or walking into a room and forgetting what you came for.
+- **Restlessness and racing thoughts**: Physical hyperactivity often matures into internal restlessness, constant mental chatter, or difficulty unwinding at night.
+- **Emotional dysregulation and rejection sensitivity**: Intense reactions to perceived criticism, frustration, or minor setbacks.
+- **Chronic burnout and masking**: Expending massive cognitive effort to appear organized and composed at work, only to collapse in exhaustion at home.
 
-## The device is part of the number
+## The Problem of Late Diagnosis and Masking
 
-A target without a device is not a target. "LCP under two seconds" measured on a MacBook on office fibre is a statement about our office, not about the site.
+Many adults, particularly women and high-achieving individuals, develop elaborate coping systems to compensate for their executive deficits. They rely on anxiety, adrenaline, and last-minute deadlines to force dopamine release.
 
-We measure on a mid range Android phone from three years ago, on a throttled connection, and we say so in writing. In practice that means CPU throttling around 4x and a network profile close to slow 4G, which is what Lighthouse's mobile preset simulates by default. The first time a client sees their own site under those conditions, the meeting changes character entirely. Nobody needs convincing after that, and no slide deck has ever done the same job.
+Over time, this strategy takes a heavy toll. Chronic stress, anxiety disorders, and depression frequently develop alongside unrecognized ADHD. When adult patients seek help for depression or anxiety that does not respond to standard treatments, underlying ADHD is often an essential factor to explore.
 
-## Writing it down where the build can read it
+## The Diagnostic Pathway in New Zealand
 
-A budget nobody automates is a budget that expires quietly around week six. Ours lives in a file:
+Navigating an adult ADHD diagnosis in New Zealand requires several clear steps:
 
-```json
-[
-  {
-    "path": "/*",
-    "resourceSizes": [
-      { "resourceType": "document", "budget": 20 },
-      { "resourceType": "script", "budget": 40 },
-      { "resourceType": "stylesheet", "budget": 25 },
-      { "resourceType": "font", "budget": 95 },
-      { "resourceType": "total", "budget": 400 }
-    ],
-    "resourceCounts": [
-      { "resourceType": "third-party", "budget": 4 }
-    ],
-    "timings": [
-      { "metric": "largest-contentful-paint", "budget": 2000 },
-      { "metric": "cumulative-layout-shift", "budget": 0.05 }
-    ]
-  }
-]
-```
+### 1. Initial GP Assessment and Screening
+The journey begins with your family doctor (GP). During this initial consultation:
+- We explore your developmental history (symptoms must have had some onset before age 12, even if masked).
+- We screen for overlapping or alternative conditions (thyroid dysfunction, sleep apnea, mood disorders).
+- We use standardized screening questionnaires, such as the **Adult ADHD Self-Report Scale (ASRS v1.1)**, to quantify your symptoms across work, home, and social settings.
 
-Sizes are in kibibytes, timings in milliseconds, and the file is understood directly by the Lighthouse CLI:
+### 2. Specialist Referral
+Under current New Zealand regulations, an initial formal diagnosis of adult ADHD must be made or confirmed by a psychiatrist or specialized clinical psychologist.
+- **Private Sector**: Most adults access diagnosis through private psychiatrists. Waitlists typically vary between two and six months depending on the region.
+- **Public Mental Health Services**: Public funding for adult ADHD assessments is currently severely limited in New Zealand and generally reserved for cases with severe comorbid psychiatric risk.
 
-```bash
-npx lighthouse "https://staging.example.com/journal/first-post/" \
-  --budget-path=./perf/budget.json \
-  --form-factor=mobile \
-  --output=json --output-path=./perf/report.json \
-  --chrome-flags="--headless=new"
-```
+### 3. Special Authority and Medication
+If medication is indicated, New Zealand's pharmaceutical scheme (Pharmac) requires a **Special Authority** approval for funded stimulants (such as methylphenidate and dexamfetamine).
+Once a psychiatrist initiates treatment and issues the initial Special Authority, they can issue a recommendation for your GP to take over ongoing prescribing and monitoring under shared care arrangements.
 
-The run happens on every pull request that touches templates, and the job fails on a budget violation rather than on a score. Scores are a weighted composite that changes between Lighthouse versions; a budget is a promise with a unit attached. When the number moves, the pull request tells you which resource type moved it, and that conversation takes two minutes instead of an afternoon.
+## A Multimodal Approach to Management
 
-## The clause that does the actual work
+Medication is often an effective tool for ADHD, helping balance neurotransmitter levels so that executive functioning requires less brute force. However, medication is most powerful when paired with comprehensive lifestyle scaffolding:
 
-Automation catches regressions. It does not answer the political question, which always arrives around week nine and always sounds reasonable. The contract answers it:
+1. **Environmental adaptations**: Externalizing memory through shared calendars, visual timers, and clear physical organizational zones.
+2. **Behavioral strategies**: Breaking tasks into small, non-threatening intervals (e.g. 15-minute sprints), pairing difficult tasks with engaging sensory inputs (body doubling, instrumental music).
+3. **Sleep, exercise, and nutrition**: Aerobic exercise naturally boosts dopamine and noradrenaline levels, while adequate sleep stabilizes emotional regulation.
+4. **Self-compassion**: Shifting away from self-blame toward understanding your unique neurological wiring.
 
-1. **The budget is a fixed quantity, not a target.** Nobody is asked to be under it on average.
-2. **New weight requires equivalent weight to leave.** A 90 KB video header is fine if 90 KB of something else goes, and the client picks what.
-3. **Third parties count as ours.** An analytics tag, a chat widget and a consent manager are three of the four allowed third parties, so the fourth is a decision, not an accident.
-4. **A violation is a release blocker, not a ticket.** The site ships slow or it ships later. There is no third option and no backlog to hide it in.
+## Where to Begin
 
-The point of writing this down is not legal leverage. We have never invoked it in anger. Its real function is that it moves the argument from week nine, when the budget is spent and everyone is tired, to week zero, when it is an abstract discussion between adults who still like each other.
+If you suspect that ADHD may be impacting your work, relationships, or mental health, taking a structured screener is a great first step.
 
-## Where our budgets failed
-
-Twice, and both times for the same reason: the site left our hands.
-
-### The tags nobody was watching
-
-The first failure was a client whose marketing team added six tags through a tag manager the month after launch. Page weight tripled. Nothing in our process was even watching, because our automation ran on pull requests, and there were no pull requests. Now the same Lighthouse run happens weekly against production on a schedule, and the report goes to the client's inbox, not ours.
-
-### The four megabyte photograph
-
-The second was a content problem dressed as an engineering problem. An editor uploaded a 4.2 MB photograph through the CMS, which resized it politely for display and served the original anyway on the article page, because the template asked for the source. That is our bug, not theirs, and the fix was a pipeline that makes the wrong thing impossible: uploads are transcoded to AVIF and WebP with explicit dimensions, and the template cannot reference an original file at all.
-
-Both failures share a shape worth naming. A budget protects the code you write. It does nothing about the content and the tags that arrive later, which is where the weight actually accumulates over a site's life. If you write only one automated check after launch, do not make it a synthetic test of your own template. Make it a weekly run against the live page, on the phone your readers really use, sent to the person who can say no.
-
-## What it costs
-
-An afternoon at the start of the project, a CI job of about thirty lines, and the discipline to let a build fail on a Friday. In exchange you get a site that is still fast at the end of the engagement, which is the only measurement anyone outside the team ever makes.
+You can complete our [ADHD Self-Test (ASRS v1.1)](/blog/adhd-self-test/) right here in your browser. Download the resulting summary card, book a double appointment with your GP, and bring the results along to start the conversation.

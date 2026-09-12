@@ -1,28 +1,27 @@
 // src/config/siteData.json.ts - publication identity: name, author, email, socials.
 import type { SiteDataProps } from "./types/configDataTypes";
 
-// Everything that identifies the publication lives here. This is the first file
-// you should edit to rebrand your site.
+// Everything that identifies the publication lives here.
 const siteData: SiteDataProps = {
-  name: "Reef",
-  title: "Reef - the Astro theme for people who write",
+  name: "Dr Torrance Merkle",
+  title: "Dr Torrance Merkle - General Practitioner & ADHD Care",
   description:
-    "A free Astro 7 blog theme built for reading: an editorial home, a post page tuned for eight minutes of attention, topic archives, author pages, client-side search, and a bilingual layer that costs one line per language.",
+    "Evidence-based medical care, adult ADHD screening, and practical health guides by Dr Torrance Merkle (MBChB, Auckland).",
   useViewTransitions: true,
 
   // Optional notice displayed in footer (leave empty if not needed).
   demoNotice: "",
 
-  // Author information for footer & metadata:
+  // Author information for footer and metadata:
   author: {
-    name: "Example Studio",
-    email: "hello@example.com",
+    name: "Dr Torrance Merkle",
+    email: "contact@drtorrance.co.nz",
     twitter: "",
   },
 
   defaultImage: {
     src: "/og/default.png",
-    alt: "Reef, the Astro theme for people who write",
+    alt: "Dr Torrance Merkle - General Practitioner",
   },
 };
 

@@ -1,4 +1,4 @@
-// src/pages/robots.txt.ts - robots.txt dynamique : tout est autorise sauf la recherche interne, sitemap en URL absolue.
+// src/pages/robots.txt.ts - Dynamic robots.txt: allow all except search, absolute sitemap URL.
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = ({ site, url }) => {

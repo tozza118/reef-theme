@@ -1,4 +1,4 @@
-// src/config/navData.json.ts - navigation, footer columns, and routes: single source of truth for Reef links.
+// src/config/navData.json.ts - navigation, footer columns, and routes: single source of truth for site links.
 //
 // Labels are not written here: they come from the dictionary so they can be easily customized.
 // This file only describes navigation structure (items, columns) and canonical paths.
@@ -13,15 +13,15 @@ export function getNavData(locale: Locale): NavItem[] {
   const t = useTranslations(locale);
   const L = (path: string): string => localizePath(path, locale);
   return [
-    { text: t.nav.posts, href: L("/about-me/") },
+    { text: t.nav.posts, href: L("/blog/") },
     { text: t.nav.topics, href: L("/topics/") },
-    { text: t.nav.about, href: L("/about/") },
+    { text: t.nav.about, href: L("/about-me/") },
     { text: t.nav.contact, href: L("/contact/") },
   ];
 }
 
 /**
- * Footer columns: Read, The studio, Legal.
+ * Footer columns: Read, Practice, Legal.
  */
 export function getFooterData(locale: Locale): FooterColumn[] {
   const t = useTranslations(locale);
@@ -32,14 +32,14 @@ export function getFooterData(locale: Locale): FooterColumn[] {
       links: [
         { text: t.nav.posts, href: L("/blog/") },
         { text: t.nav.topics, href: L("/topics/") },
-        { text: t.nav.authors, href: L("/authors/") },
+        { text: t.nav.about, href: L("/about-me/") },
         { text: t.footer.rss, href: L("/rss.xml") },
       ],
     },
     {
       title: t.footer.colStudio,
       links: [
-        { text: t.nav.about, href: L("/about/") },
+        { text: t.nav.about, href: L("/about-me/") },
         { text: t.nav.contact, href: L("/contact/") },
       ],
     },
@@ -63,7 +63,7 @@ export function getSiteRoutes(locale: Locale): SiteRoutes {
     posts: L("/blog/"),
     topics: L("/topics/"),
     authors: L("/authors/"),
-    about: L("/about/"),
+    about: L("/about-me/") ,
     contact: L("/contact/"),
     search: L("/search/"),
     rss: L("/rss.xml"),

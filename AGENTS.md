@@ -132,8 +132,8 @@ work is done".
 2. No file exceeds 400 lines.
 3. No em dashes, no en dashes, anywhere: code, comments, copy, docs. Plain
    hyphens only.
-4. Code comments are in French **without accents**. Displayed copy is in the
-   dictionary, with accents, and never in a component.
+4. Header comments and code comments are in English. Displayed copy is in the
+   dictionary and never in a component.
 5. Markup uses semantic tokens only (bg-background, text-foreground, bg-card,
    bg-primary, text-muted-foreground, border-border, bg-surface, text-accent,
    text-accent-text, ring-ring). Palette names (ink-*, coral-*, reef-*) and
@@ -145,10 +145,8 @@ work is done".
    word per big title: it keeps the heading font, turns the house turquoise and
    carries the turquoise wave underline (--accent-wave). Coral is the second
    accent, rationed. Never an italic serif.
-8. Bilingual is mandatory: `export const getStaticPaths = localePaths;` on
-   every page under [...locale]/ (dynamic routes multiply it), every internal
-   href through `localizePath()`, and the French is written, not translated. A
-   post exists twice, under the same slug.
+8. Single English locale: `export const getStaticPaths = localePaths;` on
+   every page under [...locale]/, every internal href through `localizePath()`.
 9. Accessibility is part of done: 44px touch targets, correct aria, alt
    everywhere, visible focus, reduced motion respected at both layers.
 10. New third-party anything (package, font, asset) gets a THIRD-PARTY.md

@@ -1,81 +1,78 @@
 ---
-title: "ADHD Self Test"
-description: "Adult ADHD Self-Report Scale (ASRS v1.1) screener and symptom checklist."
+title: "ADHD Self-Test (ASRS v1.1)"
+description: "Adult ADHD Self-Report Scale (ASRS v1.1) screener, symptom checklist, and printable results guide."
 pubDate: 2026-09-08
+updatedDate: 2026-09-12
 author: en/torrance-merkle
 topic: en/adhd
-tags: ["adhd", "health", "screener", "test"]
+tags: ["adhd", "health", "screener", "test", "new-zealand"]
 cover: ../../../assets/covers/adhd-wooden-blocks.webp
-coverAlt: "Wooden blocks spelling ADHD arranged on a wooden table, with someone arranging them"
+coverAlt: "Wooden blocks spelling ADHD arranged on a wooden table"
 featured: true
 draft: false
 ---
 
-<!-- ASRS v1.1 Questionnaire Embed with Auto-Advance & Native PNG Generator -->
-<div id="asrs-questionnaire-container" style="max-width: 800px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif; color: #1e293b;">
-<div style="text-align: center; margin-bottom: 30px;">
-<h2 style="font-size: 26px; font-weight: bold; margin-bottom: 10px;">Adult ADHD Self-Report Scale (ASRS v1.1)</h2>
-<p style="color: #64748b; font-size: 15px; line-height: 1.6;">Please answer the questions below, rating yourself on each of the criteria based on how you have felt and conducted yourself over the <strong>past 6 months</strong>.</p>
-</div>
+The **Adult ADHD Self-Report Scale (ASRS v1.1)** is a recognized symptom checklist developed in conjunction with the World Health Organization (WHO) and researchers at Harvard Medical School and New York University.
 
-<form id="asrs-form"></form>
+It is designed to help adults assess whether their everyday challenges with organization, focus, task initiation, and restlessness are consistent with adult ADHD.
 
-<div id="asrs-submit-container" style="text-align: center; margin-top: 30px;">
-<button type="button" onclick="calculateASRS()" style="background: #0f172a; color: white; border: none; padding: 14px 32px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: opacity 0.2s;">Calculate Results</button>
-</div>
+## Complete the Questionnaire
 
-<!-- Results Section -->
-<div id="asrs-results-section" style="display: none; margin-top: 40px;">
-<div id="asrs-capture-area" style="padding: 40px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-<h2 style="margin-top: 0; font-size: 22px; color: #0f172a;">ASRS v1.1 Results Summary</h2>
-<p style="color: #64748b; margin-bottom: 24px;">Date: <span id="asrs-result-date"></span></p>
+Rate yourself on each question based on how you have felt and conducted yourself over the **past 6 months**.
 
-<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 24px;">
-<div style="flex: 1; min-width: 200px; padding: 24px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; text-align: center;">
-<h3 style="margin: 0 0 10px 0; font-size: 16px; color: #475569;">Part A (Screener)</h3>
-<div style="font-size: 42px; font-weight: 700; color: #0f172a;" id="asrs-score-a">0 / 6</div>
-<p style="margin: 5px 0 0 0; font-size: 13px; color: #64748b;">(Predictive Screener)</p>
-</div>
-<div style="flex: 1; min-width: 200px; padding: 24px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; text-align: center;">
-<h3 style="margin: 0 0 10px 0; font-size: 16px; color: #475569;">Part B (Symptom Checklist)</h3>
-<div style="font-size: 42px; font-weight: 700; color: #0f172a;" id="asrs-score-b">0 / 12</div>
-<p style="margin: 5px 0 0 0; font-size: 13px; color: #64748b;">(Additional Context)</p>
-</div>
-</div>
+<div id="asrs-questionnaire-container" class="not-prose my-8 w-full max-w-3xl mx-auto text-foreground">
+  <form id="asrs-form"></form>
 
-<div id="asrs-result-interpretation" style="padding: 20px; background: #f1f5f9; border-left: 5px solid #3b82f6; border-radius: 4px; font-size: 15px; line-height: 1.5; color: #1e293b;"></div>
+  <div id="asrs-submit-container" class="text-center mt-8">
+    <button type="button" onclick="calculateASRS()" class="bg-primary text-primary-foreground font-display font-semibold px-8 py-3.5 rounded-pill shadow-float hover:opacity-95 transition-opacity cursor-pointer text-base">Calculate Results</button>
+  </div>
 
-<div style="margin-top: 24px; font-size: 13px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 16px;">
-* This tool is for educational and screening purposes only and does not constitute a medical diagnosis. Please share these results with a qualified healthcare professional. No data from this form has been saved or transmitted.
-</div>
-</div>
+  <div id="asrs-results-section" style="display: none;" class="mt-10">
+    <div id="asrs-capture-area" class="p-6 sm:p-9 bg-card border border-border rounded-card shadow-float">
+      <h3 class="font-display text-2xl font-bold text-foreground m-0">ASRS v1.1 Results Summary</h3>
+      <p class="text-muted-foreground text-sm mt-1 mb-6">Assessment Date: <span id="asrs-result-date"></span></p>
 
-<div style="text-align: center; margin-top: 24px;">
-<button type="button" onclick="downloadASRSImage()" style="background: #2563eb; color: white; border: none; padding: 12px 24px; font-size: 15px; font-weight: 500; border-radius: 8px; cursor: pointer; transition: background 0.2s; display: inline-flex; align-items: center; gap: 8px;">
-<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-Download Results as Image
-</button>
-</div>
-</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div class="p-6 bg-surface border border-border rounded-xl text-center">
+          <h4 class="m-0 text-sm font-semibold text-muted-foreground uppercase tracking-wider">Part A (Screener)</h4>
+          <div class="text-4xl font-bold font-display text-foreground my-2" id="asrs-score-a">0 / 6</div>
+          <p class="m-0 text-xs text-muted-foreground">Most predictive of adult ADHD</p>
+        </div>
+        <div class="p-6 bg-surface border border-border rounded-xl text-center">
+          <h4 class="m-0 text-sm font-semibold text-muted-foreground uppercase tracking-wider">Part B (Symptom Check)</h4>
+          <div class="text-4xl font-bold font-display text-foreground my-2" id="asrs-score-b">0 / 12</div>
+          <p class="m-0 text-xs text-muted-foreground">Additional symptom frequency</p>
+        </div>
+      </div>
+
+      <div id="asrs-result-interpretation" class="p-5 rounded-lg border-l-4 text-sm leading-relaxed bg-surface border-primary text-foreground mb-6"></div>
+
+      <div class="text-xs text-muted-foreground border-t border-border pt-4">
+        * This screener is for educational use only and does not constitute a formal diagnosis. Your answers remain strictly private on your device; no health data is transmitted or stored.
+      </div>
+    </div>
+
+    <div class="text-center mt-6">
+      <button type="button" onclick="downloadASRSImage()" class="bg-primary text-primary-foreground font-display font-medium px-6 py-3 rounded-pill inline-flex items-center gap-2 text-sm shadow-float hover:opacity-95 transition-opacity cursor-pointer">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        Download Results as Image / PDF
+      </button>
+    </div>
+  </div>
 </div>
 
 <style>
-#asrs-questionnaire-container * { box-sizing: border-box; }
-.asrs-q-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); transition: border-color 0.2s; }
-.asrs-q-card:hover { border-color: #cbd5e1; }
-.asrs-q-text { font-size: 16px; font-weight: 600; color: #1e293b; margin-bottom: 16px; line-height: 1.5; }
-.asrs-options { display: flex; flex-wrap: wrap; gap: 10px; }
-.asrs-option { flex: 1; min-width: 120px; }
+.asrs-q-card { background: var(--color-card, #ffffff); border: 1px solid var(--color-border, #e2e8f0); border-radius: 12px; padding: 20px; margin-bottom: 16px; transition: border-color 0.2s; }
+.asrs-q-card:hover { border-color: var(--color-primary, #0ea5e9); }
+.asrs-q-text { font-size: 15px; font-weight: 600; color: var(--color-foreground, #0f172a); margin-bottom: 14px; line-height: 1.5; }
+.asrs-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.asrs-option { flex: 1 1 18%; min-width: 100px; }
 .asrs-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
-.asrs-option label { display: flex; align-items: center; justify-content: center; width: 100%; padding: 12px 10px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500; color: #475569; transition: all 0.2s; text-align: center; }
-.asrs-option input[type="radio"]:checked + label { background: #eff6ff; border-color: #3b82f6; color: #1d4ed8; }
-.asrs-option input[type="radio"]:focus-visible + label { outline: 2px solid #3b82f6; outline-offset: 2px; }
-.asrs-option label:hover { background: #f1f5f9; border-color: #cbd5e1; }
-.asrs-part-heading { font-size: 20px; font-weight: bold; color: #0f172a; margin: 40px 0 20px 0; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
-@media (max-width: 600px) {
-  .asrs-option { flex: 1 1 100%; }
-  .asrs-q-card { padding: 16px; }
-}
+.asrs-option label { display: flex; align-items: center; justify-content: center; width: 100%; padding: 10px 8px; background: var(--color-surface, #f8fafc); border: 1px solid var(--color-border, #e2e8f0); border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--color-muted-foreground, #64748b); transition: all 0.15s; text-align: center; }
+.asrs-option input[type="radio"]:checked + label { background: var(--color-primary, #0ea5e9); border-color: var(--color-primary, #0ea5e9); color: var(--color-primary-foreground, #ffffff); font-weight: 600; }
+.asrs-option label:hover { border-color: var(--color-primary, #0ea5e9); }
+.asrs-part-heading { font-size: 18px; font-weight: 700; color: var(--color-foreground, #0f172a); margin: 32px 0 16px 0; padding-bottom: 8px; border-bottom: 1px solid var(--color-border, #e2e8f0); }
+@media (max-width: 640px) { .asrs-option { flex: 1 1 100%; } .asrs-q-card { padding: 14px; } }
 </style>
 
 <script>
@@ -96,7 +93,7 @@ Download Results as Image
     { id: 13, text: "How often do you feel restless or fidgety?", part: 'B', threshold: 3 },
     { id: 14, text: "How often do you have difficulty unwinding and relaxing when you have time to yourself?", part: 'B', threshold: 3 },
     { id: 15, text: "How often do you find yourself talking too much when you are in social situations?", part: 'B', threshold: 3 },
-    { id: 16, text: "When you're in a conversation, how often do you find yourself finishing the sentences of the people you are talking to, before they can finish them themselves?", part: 'B', threshold: 2 },
+    { id: 16, text: "When you are in a conversation, how often do you find yourself finishing the sentences of the people you are talking to?", part: 'B', threshold: 2 },
     { id: 17, text: "How often do you have difficulty waiting your turn in situations when turn taking is required?", part: 'B', threshold: 3 },
     { id: 18, text: "How often do you interrupt others when they are busy?", part: 'B', threshold: 2 }
   ];
@@ -122,9 +119,9 @@ Download Results as Image
     if (!form || form.getAttribute("data-initialized") === "true") return;
     form.setAttribute("data-initialized", "true");
 
-    let html = `<div class="asrs-part-heading">Part A</div>`;
+    let html = `<div class="asrs-part-heading">Part A (Primary Screener)</div>`;
     asrsQuestions.filter(q => q.part === 'A').forEach(q => html += buildQuestionHTML(q));
-    html += `<div class="asrs-part-heading">Part B</div>`;
+    html += `<div class="asrs-part-heading">Part B (Symptom Frequency)</div>`;
     asrsQuestions.filter(q => q.part === 'B').forEach(q => html += buildQuestionHTML(q));
     form.innerHTML = html;
   }
@@ -139,7 +136,7 @@ Download Results as Image
         const submitContainer = document.getElementById('asrs-submit-container');
         if (submitContainer) submitContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-    }, 250);
+    }, 220);
   };
 
   window.calculateASRS = function() {
@@ -149,7 +146,7 @@ Download Results as Image
 
     asrsQuestions.forEach(q => {
       const card = document.getElementById(`qcard-${q.id}`);
-      if (card) card.style.borderColor = "#e2e8f0";
+      if (card) card.style.borderColor = "";
     });
 
     asrsQuestions.forEach(q => {
@@ -174,7 +171,7 @@ Download Results as Image
     });
 
     if (missing.length > 0) {
-      alert("Please answer all questions before calculating your results.");
+      alert("Please complete all questions before calculating your results.");
       const firstMissing = document.getElementById(`qcard-${missing[0]}`);
       if (firstMissing) firstMissing.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
@@ -188,21 +185,19 @@ Download Results as Image
     const interp = document.getElementById('asrs-result-interpretation');
     if (interp) {
       if (scoreA >= 4) {
-        interp.innerHTML = "<strong>Interpretation:</strong> A score of 4 or higher in Part A indicates symptoms highly consistent with ADHD in adults. Further clinical investigation is highly warranted.";
-        interp.style.borderLeftColor = "#3b82f6";
+        interp.innerHTML = "<strong>Interpretation:</strong> A score of 4 or higher in Part A indicates symptoms highly consistent with adult ADHD. Further evaluation by a medical professional or psychiatrist is strongly recommended.";
       } else {
-        interp.innerHTML = "<strong>Interpretation:</strong> Your score in Part A suggests fewer symptoms commonly associated with ADHD. However, if you are experiencing significant difficulties, a clinical evaluation is always recommended.";
-        interp.style.borderLeftColor = "#10b981";
+        interp.innerHTML = "<strong>Interpretation:</strong> Your score in Part A suggests fewer typical ADHD symptoms. If you continue to experience executive difficulties or distress, a comprehensive clinical review with your GP is advised.";
       }
     }
 
     const dateEl = document.getElementById('asrs-result-date');
-    if (dateEl) dateEl.innerText = new Date().toLocaleDateString();
+    if (dateEl) dateEl.innerText = new Date().toLocaleDateString("en-NZ", { year: "numeric", month: "long", day: "numeric" });
 
     const resultsSection = document.getElementById('asrs-results-section');
     if (resultsSection) {
       resultsSection.style.display = 'block';
-      resultsSection.scrollIntoView({ behavior: 'smooth' });
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -215,7 +210,7 @@ Download Results as Image
     const scoreB = scoreBEl ? scoreBEl.innerText : "0 / 12";
     const interpText = interpEl ? interpEl.innerText.replace('Interpretation: ', '') : '';
     const isHigh = parseInt(scoreA.split('/')[0], 10) >= 4;
-    const dateStr = new Date().toLocaleDateString();
+    const dateStr = new Date().toLocaleDateString("en-NZ", { year: "numeric", month: "long", day: "numeric" });
 
     const canvas = document.createElement('canvas');
     canvas.width = 1200;
@@ -230,12 +225,12 @@ Download Results as Image
     ctx.strokeRect(20, 20, 1160, 720);
 
     ctx.fillStyle = '#0f172a';
-    ctx.font = 'bold 32px system-ui, sans-serif';
-    ctx.fillText('ASRS v1.1 Results Summary', 60, 80);
+    ctx.font = 'bold 32px system-ui, -apple-system, sans-serif';
+    ctx.fillText('ASRS v1.1 Adult ADHD Screening Summary', 60, 80);
 
     ctx.fillStyle = '#64748b';
-    ctx.font = '20px system-ui, sans-serif';
-    ctx.fillText('Date: ' + dateStr, 60, 115);
+    ctx.font = '20px system-ui, -apple-system, sans-serif';
+    ctx.fillText('Assessment Date: ' + dateStr, 60, 115);
 
     function drawCard(x, y, w, h, r, fillColor, strokeColor) {
       ctx.beginPath();
@@ -252,46 +247,46 @@ Download Results as Image
     drawCard(60, 150, 520, 190, 16, '#f8fafc', '#cbd5e1');
     ctx.textAlign = 'center';
     ctx.fillStyle = '#475569';
-    ctx.font = 'bold 22px system-ui, sans-serif';
-    ctx.fillText('Part A (Screener)', 320, 195);
+    ctx.font = 'bold 22px system-ui, -apple-system, sans-serif';
+    ctx.fillText('Part A (Predictive Screener)', 320, 195);
     ctx.fillStyle = '#0f172a';
-    ctx.font = 'bold 56px system-ui, sans-serif';
+    ctx.font = 'bold 56px system-ui, -apple-system, sans-serif';
     ctx.fillText(scoreA, 320, 265);
     ctx.fillStyle = '#64748b';
-    ctx.font = '18px system-ui, sans-serif';
-    ctx.fillText('(Predictive Screener)', 320, 305);
+    ctx.font = '18px system-ui, -apple-system, sans-serif';
+    ctx.fillText('Threshold: 4 or more', 320, 305);
 
     drawCard(620, 150, 520, 190, 16, '#f8fafc', '#cbd5e1');
     ctx.fillStyle = '#475569';
-    ctx.font = 'bold 22px system-ui, sans-serif';
-    ctx.fillText('Part B (Symptom Checklist)', 880, 195);
+    ctx.font = 'bold 22px system-ui, -apple-system, sans-serif';
+    ctx.fillText('Part B (Symptom Frequency)', 880, 195);
     ctx.fillStyle = '#0f172a';
-    ctx.font = 'bold 56px system-ui, sans-serif';
+    ctx.font = 'bold 56px system-ui, -apple-system, sans-serif';
     ctx.fillText(scoreB, 880, 265);
     ctx.fillStyle = '#64748b';
-    ctx.font = '18px system-ui, sans-serif';
-    ctx.fillText('(Additional Context)', 880, 305);
+    ctx.font = '18px system-ui, -apple-system, sans-serif';
+    ctx.fillText('Checklist Context', 880, 305);
 
     ctx.textAlign = 'left';
     drawCard(60, 370, 1080, 160, 12, '#f1f5f9', null);
-    ctx.fillStyle = isHigh ? '#3b82f6' : '#10b981';
+    ctx.fillStyle = isHigh ? '#0284c7' : '#10b981';
     ctx.fillRect(60, 370, 12, 160);
 
     ctx.fillStyle = '#0f172a';
-    ctx.font = 'bold 20px system-ui, sans-serif';
-    ctx.fillText('Interpretation:', 95, 415);
+    ctx.font = 'bold 20px system-ui, -apple-system, sans-serif';
+    ctx.fillText('Clinical Interpretation:', 95, 415);
     ctx.fillStyle = '#1e293b';
-    ctx.font = '20px system-ui, sans-serif';
+    ctx.font = '19px system-ui, -apple-system, sans-serif';
 
     const words = interpText.split(' ');
     let line = '';
     let lineY = 450;
     for (let n = 0; n < words.length; n++) {
       let testLine = line + words[n] + ' ';
-      if (ctx.measureText(testLine).width > 1000 && n > 0) {
+      if (ctx.measureText(testLine).width > 980 && n > 0) {
         ctx.fillText(line, 95, lineY);
         line = words[n] + ' ';
-        lineY += 30;
+        lineY += 28;
       } else {
         line = testLine;
       }
@@ -305,13 +300,13 @@ Download Results as Image
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    ctx.fillStyle = '#94a3b8';
-    ctx.font = '16px system-ui, sans-serif';
-    ctx.fillText('* This tool is for educational and screening purposes only and does not constitute a medical diagnosis.', 60, 610);
-    ctx.fillText('Please share these results with a qualified healthcare professional. No data from this form has been saved or transmitted.', 60, 640);
+    ctx.fillStyle = '#64748b';
+    ctx.font = '15px system-ui, -apple-system, sans-serif';
+    ctx.fillText('* Screening tool for informational purposes only. Not a medical diagnosis.', 60, 610);
+    ctx.fillText('Bring this summary to your General Practitioner (GP) for clinical discussion.', 60, 636);
 
     const link = document.createElement('a');
-    link.download = 'ADHD-Results-Summary.png';
+    link.download = 'DrTorrance-ADHD-Screening-Summary.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
   };
@@ -325,3 +320,11 @@ Download Results as Image
 })();
 </script>
 
+## What to Do With Your Results
+
+If your Part A score is 4 or higher, your self-reported symptoms are consistent with adult ADHD. Here are recommended next steps:
+
+1. **Download the Summary**: Click the button above to generate a summary image of your scores.
+2. **Book a Double Appointment**: Contact your General Practice and ask for a 30-minute double consultation to discuss mental health and ADHD screening.
+3. **Gather Context**: Think about how these traits showed up in your childhood or schooling, and how they currently affect your work and personal life.
+4. **Discuss Pathways**: Your GP can evaluate other contributing medical factors, rule out mimics, and refer you to a specialist psychiatrist for formal diagnostic assessment and Special Authority medication approval.
